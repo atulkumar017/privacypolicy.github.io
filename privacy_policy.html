@@ -1,0 +1,111 @@
+<html>
+<head>
+<title>PERMISSIONS</title>
+<style>
+.title{
+	margin-top: 50px;
+    padding-left: 30px;
+    font-size: 45px;
+    font-weight: 600;
+    color: #000000;;
+}
+.title p{
+	font-size: 15px;
+    color: #000000;
+    line-height: 2;
+    text-align: center;
+	text-align: justify;
+}
+
+.accordion {
+  font-weight: bold;
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 20px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.accordion:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  font-size: 13px;
+  color: #777;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+</style>
+</head>
+<body style="background-color: #F5F5F5;">
+<div class="container" style="margin: 30px;">
+	<div class="title">
+	<h3>PERMISSIONS</h3>
+	<p>Select one of the groups below to learn more about what is included in that permissions group.<br>
+	NOTE : Over time, the Android Operating System may change the way permissions work, including 
+	adding or reclassifying certains permissions
+	</p>
+	</div>
+
+	<button class="accordion">CAMERA</button>
+	<div class="panel">
+	  <p>An app can use your device's camera. Camera access may include the ability to : Take pictures and Record video
+	  </p>
+	</div>
+
+	<button class="accordion">CONTACTS</button>
+	<div class="panel">
+	  <p>An app can use your device's contacts, which may include the ability to : Read and Modify your contacts
+	  </p>
+	</div>
+
+	<button class="accordion">CELLULAR DATA SETTINGS Or INTERNET</button>
+	<div class="panel">
+	  <p>An app can use settings that control your mobile data connection and potentially the data you receive</p>
+	</div>
+	
+	<button class="accordion">SMS</button>
+	<div class="panel">
+	  <p>An app can use your device's text messaging(SMS) and/or Multimedia messaging service(MMS). This group may include the 
+	  ability to :  Use text, picture or video messages</p>
+	</div>
+
+</div>
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight){
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+
+</body>
+</html>
